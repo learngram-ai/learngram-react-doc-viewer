@@ -42,7 +42,18 @@ export const ProxyRenderer: FC<{}> = () => {
         return null;
       } else {
         if (config && config?.noRenderer?.overrideComponent) {
-          return <>{config.noRenderer.overrideComponent}</>;
+          return (
+            <>
+              {config.noRenderer.overrideComponent}
+              <DownloadButton
+                id="no-renderer-download"
+                href={currentDocument?.uri}
+                download={currentDocument?.uri}
+              >
+                Download File
+              </DownloadButton>
+            </>
+          );
         }
         return (
           <div id="no-renderer" data-testid="no-renderer">
