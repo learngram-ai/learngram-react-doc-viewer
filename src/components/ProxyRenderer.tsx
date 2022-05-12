@@ -26,7 +26,7 @@ export const ProxyRenderer: FC<{}> = () => {
       return <div id="no-documents">{/* No Documents */}</div>;
     } else if (documentLoading) {
       if (config && config?.loadingRenderer?.overrideComponent) {
-        return <div>{config.loadingRenderer.overrideComponent}</div>;
+        return <>{config.loadingRenderer.overrideComponent}</>;
       }
       return (
         <LoadingContainer id="loading-renderer" data-testid="loading-renderer">
@@ -42,7 +42,7 @@ export const ProxyRenderer: FC<{}> = () => {
         return null;
       } else {
         if (config && config?.noRenderer?.overrideComponent) {
-          return <div>{config.noRenderer.overrideComponent}</div>;
+          return <>{config.noRenderer.overrideComponent}</>;
         }
         return (
           <div id="no-renderer" data-testid="no-renderer">
