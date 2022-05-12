@@ -41,8 +41,8 @@ export const ProxyRenderer: FC<{}> = () => {
       } else if (CurrentRenderer === undefined) {
         return null;
       } else {
-        if (config && config?.loadingRenderer?.overrideComponent) {
-          return <div>{config.loadingRenderer.overrideComponent}</div>;
+        if (config && config?.noRenderer?.overrideComponent) {
+          return <div>{config.noRenderer.overrideComponent}</div>;
         }
         return (
           <div id="no-renderer" data-testid="no-renderer">
